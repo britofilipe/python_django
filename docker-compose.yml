@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  python:
+    image: "pytron/django/1.0.2"
+    build:
+      context: ./
+    command: >
+      sh -c "python manage.py runserver 0.0.0.0:8000"
+    container_name: python
+    volumes:
+      - ./app:/app
+    ports:
+      - "8000:8000"
